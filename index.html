@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex,noarchive, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Bogdan Gevko</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="site-name-container">
+
+          <!-- These are entirely aesthetic details (for now) so I will hide it from screen readers. -->
+        <img class="decorative-icons" id="decorative-browser-btns" src="icons/decorative-browser-btns.svg" alt="decorative browser icons" aria-hidden="true" tabindex="-1">
+
+        <div id="site-name-textbox">
+          <img src="icons/lock-icon.svg" alt="Lock Icon">
+          <h1>Bogdan Gevko</h1>
+        </div>
+
+        <div class="socials">
+          <a id="github-link" href="#"><span>Bogdan's Github</span></a>
+          <a id="linkedin-link"href="#"><span>Bogdan's LinkedIn</span></a>
+          <a id="email-link"href="#"><span>Bogdan's Email</span></a>
+          <a id="resume-link"href="#"><span>Bogdan's Resume</span></a>
+        </div>
+      </div>
+      
+      <nav class="main-nav">
+        <a class="active" id="home-link" href="index.html">home</a>
+        <a id="contact-link" href="contact.html">contact</a>
+        <a id="gallery-link" href="gallery.html">gallery</a>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <header class="section-header">
+
+          <!-- ignored by screen readers for now (aesthetic detail) -->
+          <img class="decorative-icons" id="section-control-btns" src="icons/decorative-control-btns.svg" alt="decorative browser icons" aria-hidden="true" tabindex="-1">
+
+          <h2>Web Development Concepts</h2>
+        </header>
+        <nav class="local-nav">
+          <a href="#web-servers">#web-servers</a>
+          <a href="#frontend-design">#frontend-design</a>
+          <a href="#optimized-images">#optimized-images</a>
+          <a href="#favicons">#favicons</a>
+          <a href="#cascading-style-sheets">#cascading-style-sheets</a>
+        </nav>
+        <article id="web-servers">
+          <h3>WEB SERVERS</h3>
+          <p>
+            In web development, <strong>index</strong> is a standard naming convention for a website's home page. When a user goes to any website, such as www.google.com, the browser renders contents of index.html from one of Google's servers. The user will type the domain name in the browser's address bar and hit enter. The browser will send a <strong>GET</strong> request to the IP address that the domain name points to, which is the server hosting the Google index page. When the server sees the request, it will respond with a status code, such as 200, and provide the contents of <strong>index.html</strong> to the browser. After receiving the response from the server, the browser renders the HTML content and shows the user Google's home page. 
+          </p>
+          <p>
+            Users can open Web Dev / Inspector tools in their respective browsers to better understand this process. In Chrome, this can be accomplished by going to View, Developer, and then Developer Tools. Developers can directly observe the network activity described above by clicking the <strong>Network</strong> tab. Users should note that the browser network activity is slightly different when viewing a page directly from the local computer (by dragging and dropping an HTML page into the browser) and when the browser requests the same page hosted by a server. If a user pulls an HTML page into Google Chrome, they should note that the page URL will start with <strong>file://</strong> instead of <strong>http://</strong> or <strong>https://</strong>. The browser is not actually making a request to a remote server; it's asking the operating system to fetch the file the user dragged from the local file system. Only three items are visible in the network tab when making this local request: <strong>index.html</strong> (200), <strong>main.css</strong> (failed), and <strong>main.js</strong> (failed). "Failed" means that the operating system did not find main.css and main.js in this case. On the hand, looking at the network tab of this page when it has been uploaded to a remote server will reveal a few slight differences. The URL starts with <strong>https://</strong>, which means that the browser made a GET request to a remote server this time. Instead of seeing <strong>index.html</strong>, the user will see <strong>a1-gevkob/</strong>, the root directory where the index file is located. Additionally, main.css and main.js have <strong>404</strong> status codes instead of <strong>failed</strong>, signifying that the server could not find these files. Finally, the server provided two additional responses: <strong>single-file-hooks-frames.js</strong> (200), a JavaScript file, and <strong>favicon.ico</strong> (200), an icon. 
+          </p>
+        
+          <p>
+            In addition to using Developer Tools, the developer can gain valuable insights from the URL of a given web page. The URL for this page (https://web.engr.oregonstate.edu/~gevkob/a1-gevkob/) can be broken down as follows: The first segment of the URL, <strong>https</strong>, tells the developer that the browser will make a request to the server using the secure hypertext transfer protocol, and it is also known as the <strong>scheme</strong>. The next segment, <strong>web</strong>, is known as the <strong>subdomain</strong>. The central part of the URL is <strong>engr.oregonstate.edu</strong>, which is the <strong>host domain</strong>. And lastly, the <strong>/~gevkob/a1-gevkob/</strong> aspect of the URL represents the <strong>resources</strong> of the URL, which is the specific location where the index.html file is located for this page. 
+          </p>
+        </article>
+
+        <article id="frontend-design">
+          <h3>FRONTEND DESIGN</h3>
+          <p>
+            <strong>Frontend</strong> in web development refers to the aspect of a website that the user sees and interacts with. Designing the frontend includes making decisions regarding the visual elements of a website, such as layout, fonts, colors, and images. Additionally, frontend design focuses on the user's experience or how the overall <em>feel</em> of the website. There are many tools to assist developers with frontend design, but on the most fundamental level, developers use HTML, CSS, and JavaScript to design the look and feel of a website. 
+          </p>
+          <p>
+            When designing effective websites, developers think of the user experience in terms of usability. Usability is the ease with which the user is able to use the website and is broken down into five sections, also known as the <strong>Five "E"s of usability: </strong>
+          </p>
+          <dl>
+            <dt><strong>Effective</strong></dt>
+            <dd>
+              The ease with which a user can complete a task using the site, such as purchasing a product or finding information. 
+            </dd>
+            <dt><strong>Efficient</strong></dt>
+            <dd>
+              Refers to how quickly the user can accomplish a given task. An efficient site will enable users to achieve their desired tasks without friction.
+            </dd>
+            <dt><strong>Engaging</strong></dt>
+            <dd>
+              An engaging site will feel pleasant to the user. Details like a pleasant art style or visual feedback when hovering over an element can make a site more engaging. 
+            </dd>
+            <dt><strong>Error Tolerant</strong></dt>
+            <dd>
+              Developers can make a site error tolerant by handling and anticipating common user errors. For example, if a user enters an incorrect password, the website should provide feedback and allow the user to correct their mistake. 
+            </dd>
+            <dt><strong>Easy to Learn</strong></dt>
+            <dd>
+              Users are able to intuitively <em>get</em> the site. They can immediately start using the website without needing a tutorial.
+            </dd>
+          </dl>
+          <p>
+            When designing the page layout, it's important to note that although some HTML tags have similar behavior, they have different semantic purposes. The developer could, in theory, use the general-purpose <strong>&lt;div&gt;</strong> tag for every aspect of the page, but doing so severely hinders usability for blind users who rely on screen readers. Instead, the developer should follow the standardized semantic rules and use appropriate tags. The <strong>&lt;header&gt;</strong> tag represents the website's top banner, which usually contains the website name, publisher, and marketing slogan. The <strong>&lt;nav&gt;</strong> tag includes navigation links that take users to other parts of the site. The <strong>&lt;main&gt;</strong> element goes inside the &lt;body&gt; tag and represents the primary block containing content, such as text, images, and videos. The <strong>&lt;section&gt;</strong> tag is usually one of the children of &lt;main&gt; and is used to group related content; it uses the &lt;h1&gt; headline to describe what the section is about. The <strong>&lt;article&gt;</strong> tag is used inside &lt;section&gt; elements and denotes a specific topic defined by the second-level headline &lt;h2&gt;. The developer can include extra information related to the content in an &lt;article&gt; tag by using the <strong>&lt;aside&gt;</strong> element, which typically floats to the left or right of that article. The &lt;aside&gt; element is also sometimes used to create sidebars for navigation. The <strong>&lt;figure&gt;</strong> tag usually wraps the <strong>&lt;img&gt;</strong> and the <strong>&lt;figcaption&gt;</strong> tags to provide additional information to the user in the form of images or video. The developer can also use the <strong>&lt;blockquote&gt;</strong> tags to help paragraphs stand out, which can also include the quote and the citation tag, or <strong>&lt;q&gt;</strong> and <strong>&lt;cite&gt;</strong>, respectively. Lastly, the <strong>&lt;footer&gt;</strong> tag is generally found at the bottom of the page and may contain legal information, contact information, and links to other pages. 
+          </p>
+
+          <p>
+            HTML also provides various types of navigation functionality, depending on the content:
+          </p>
+
+          <ol>
+            <li>
+              <strong>External Content:</strong> The &lt;a&gt; tag is used with the href attribute to specify the URL of an external resource. &lt;a href="https://example.com"&gt;Example&lt;/a&gt; would create a link called Example. 
+            </li>
+            <li>
+              <strong>Internal Content:</strong> Anchors can be used to link to specific sections within the same HTML page by including the id attribute inside the href. &lt;a href="#section1"&gt; Go to Section 1 &lt;/a&gt; would create a link titled "Go to Section 1", assuming that another element has the id attribute set to "#section1."
+            </li>
+            <li>
+              <strong>Page-to-Page:</strong> The anchor tag can also link to another HTML page in the specified directory. &lt;a href="about.html">About&lt;/a&gt; would lead the user to the About page if about.html exists in the same directory as index.html.
+            </li>
+          </ol>
+        </article>
+
+        <article id="optimized-images">
+          <h3>OPTIMIZED IMAGES</h3>
+          <p>
+            Images can add a lot to a website. Although adding images to a website seems straightforward, web developers should follow best practices to ensure the site loads quickly. Image file names should be concise and descriptive to improve search engine optimization (SEO). Image files should be small without visibly affecting the image quality, which can be achieved through various compression tools. Developers should also crop their images to ensure the image fits within the page and that no space is wasted. Furthermore, developers should note that the various image file formats have different purposes. <strong>GIF</strong> files support binary transparency (either fully transparent or fully opaque) and are commonly used for short animations. GIF supports 256 colors and offers lossless compression, which is also ideal for line art. <strong>PNG</strong> files support 24-bit color depth (16.7 million colors) and full transparency through an alpha channel and are most suitable for images with complex shapes, lines, colors, and overlapping elements. <strong>SVG</strong> files, also known as vector graphics, are mathematically derived images that do not distort when resized to an extreme degree and are often used for logos, icons, interactive images, and animations. <strong>JPG</strong> files are the best format for photographs and can be significantly compressed without noticeably losing image quality. Lastly, <strong>WebP</strong> files are also used for photographs, but unlike JPG files, WebP images support transparency through an alpha channel. JPG, WebP, and PNG files all support 24-bit color depth. However, unlike the PNG format, which only supports lossless compression, JPG and WebP formats offer lossy compression, which can significantly reduce file sizes (often without noticeable impact), making them ideal for photographs.  
+          </p>
+        </article>
+
+        <article id="favicons">
+          <h3>FAVICONS</h3>
+          <p>
+            A <strong>favicon</strong>, short for "favorites icon," is a category of images in web development that come in the form of small icons and are used to quickly identify a site in various contexts. Favicons represent a website or app logo and can be displayed in the browser tab, browser bookmarks, address bar, mobile devices, and generally other places where icons are expected. The most common file types for favicons are SVG and PNG, but formats such as GIF, PNG, and ICO are also supported. These files go in the root directory of a website, with each copy having a different size. The varying dimensions provide icons for browser and high-resolution device use; common sizes are 16x16, 32x32, 180x180, 192x192, and 512x512 pixels. Note that the 180x180 size is reserved for Apple mobile devices, and the other two bigger dimensions will be used by an Android device. Once all the sizes are set, the developer can set a reference to these icons in the &lt;head&gt; tag, and the browser will automatically show them in the correct context. This can be done with the following references:
+          </p>
+          <pre><code>&lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;
+&lt;link rel="manifest" href="/site.webmanifest"&gt;</code></pre>
+          <p>
+            The first link tells the browser which icon should be used if users add a website to their home screen on their Apple mobile device. The next two lines tell the browser where to find icons for regular web use; the bigger icon is used unless space is limited. The last link refers to a web manifest file (site.webmanifest), which may look something like this:
+          </p>
+          <pre><code>
+{
+  "name": "Your App Name",
+  "short_name": "App",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}</code></pre>
+          <p>
+            The site manifest file, also in the website directory's root folder, will tell the browser which icon to use when a user saves a website to the home screen of their Android mobile device. The site manifest file has other uses as well, but that's outside the scope of this article.
+          </p>
+        </article>
+
+        <article id="cascading-style-sheets">
+          <h3>CASCADING STYLE SHEETS</h3>
+          <p>
+            Cascading Style Sheets (CSS) are at the core of how a website looks and feels. CSS gives the developer the ultimate control over every element of a website. Standard HTML comes with default styles that are rarely used in modern web development. To have creative control over a website's style, clarity, and accessibility, the developer has to turn to CSS. CSS can tell the browser how to render content in several ways:
+          </p>
+          <dl>
+            <dt><strong>Inline</strong></dt>
+            <dd>
+              Inline styles are written directly into HTML elements using the <strong>style</strong> attribute. This is a good method for quick touchups, but it can quickly become tedious for more complex designs. 
+            </dd>
+            <pre><code>&lt;p style="color: blue;"&gt;Hello, I'm blue..&lt;/p&gt;</code></pre>
+            <dt><strong>Embedded</strong></dt>
+            <dd>
+              Embedded styles are defined within the HTML document using the <strong>&lt;style&gt;</strong> element. This way of working is ideal for web pages that don't require shared styles. 
+            </dd>
+            <pre><code>  &lt;head&gt;
+    &lt;style&gt;
+      p {
+        color: blue;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;</code></pre>
+            <dt><strong>JavaScript</strong></dt>
+            <dd>
+              Turning to JavaScript for CSS styling is best suited for situations where the developer needs dynamic styling, such as when a user clicks an element or scrolls down. The JavaScript that applies the given style can be embedded into HTML or written in an external file. Here's an example that demonstrates adding a border to an <nav> element:
+            </dd>
+            <pre><code>&lt;body&gt;
+  &lt;nav&gt;
+    &lt;!-- Nav content --&gt;
+  &lt;/nav&gt;
+
+  &lt;script&gt;
+    document.addEventListener("DOMContentLoaded", function() {
+      const navbar = document.querySelector("nav");
+      const navStyle = "border: 1px solid blue;";
+      navbar.style.cssText = navStyle;
+    });
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+            
+            <dt><strong>External Stylesheet</strong></dt>
+            <dd>
+              This is the most common way to handle complex designs. The biggest advantage of this method is that multiple pages can reuse the same styles, which provides the developer with consistency and follows the DRY (Don't Repeat Yourself) principle. External stylesheets can be added in the <head> element of an HTML document like so: 
+            </dd><pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+          </dl>
+          It's important to remember that more CSS is not always better. If CSS files get too big, it could hurt website performance. Adding CSS should be a mindful and intentional activity. If the developer cannot explain why they used a particular line of CSS, they should consider removing it. Sometimes, following conventional design principles, such as page hierarchy, can result in a clean, presentable page. Here's an <a href="https://justinjackson.ca/words.html" target="_blank">example</a> of a website with minimal CSS that explains the importance of page hierarchy.
+        </article>
+      </section>
+    </main>
+    <nav id="mobile-nav">
+      <a class='active' id="home-link-mobile" href="#"><span>Home</span></a>
+      <a href="contact.html" id="contact-link-mobile"><span>Contact</span></a>
+      <a href="gallery.html" id="gallery-link-mobile"><span>Gallery</span></a>
+      <p>&copy; 2023 Bogdan Gevko</p>
+    </nav>
+    <footer>
+      <p>&copy; 2023 Bogdan Gevko</p>
+    </footer>
+  </body>
+</html>

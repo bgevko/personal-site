@@ -1,0 +1,692 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+  /* Roboto regular, medium. */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+  /* Roboto Mono regular, bold */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@500&display=swap');
+  
+  /* @import 'node_modules/modern-normalize/modern-normalize.css'; */
+        /* npm install modern-normalize
+          Resets elements for browser consistency.  
+          https://www.npmjs.com/package/modern-normalize
+        */         
+  
+  /* Component-specific stylesheets, if any. 
+    @import "component1.css";   
+  */
+
+/*   ----- Variables  -----  */
+:root {
+
+  /* Assignment 4 reqs */
+  --pure-light: #f9faf5;
+  --pastel-mid: #FDD0D0;
+  --pastel-mid-transparent: rgba(253, 208, 208, 0.7);
+  --pastel-mid-accent: #ECD0FD;
+  --pastel-dark: #804AAA;
+  --ink: #171619;
+  --unvisited-blue: #3001ed;
+  --visited-pink: #E801ED;
+
+  /* Custom variables */
+  --1px-border: 1px solid var(--pastel-dark);
+  --2px-border: 2px solid var(--pastel-dark);
+  --mobile-header-height: 80px;
+  --mobile-nav-height: 80px;
+  --desktop-header-height: 60px;
+  --desktop-footer-height: 30px;
+  --desktop-top-gap: 45px;
+  --desktop-side-gap: 20px;
+}
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* Assignment 4 reqs */
+  background-image: url("images/site-bg-1440x1024.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  max-width: 1300px;
+  color: var(--ink);
+  font-family: 'Roboto Mono', monospace;
+
+  /* Custom styles */
+  font-size: 12px;
+  line-height: 1.5;
+  height: 100vh;
+  position: relative;
+}
+
+/*  ----- Page layout blocks -----  */
+header {
+  /* General style for all headers */
+  height: var(--mobile-header-height);
+  background-color: var(--pure-light);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0 10px;
+}
+
+main {
+  /* Center content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* 769px and below, main section will always be between header and bottom navbar */
+  height: calc(100vh - var(--mobile-nav-height) - var(--mobile-header-height));
+  
+  /* Styling */
+  background-color: var(--pastel-mid);
+  border-top: var(--1px-border); 
+
+  /* Gap between header and firt section */
+  padding: 20px;
+
+  /* main is scrollable and words wrap if too long */
+  overflow: auto;
+  overflow-wrap: break-word
+}
+
+footer {
+  /* Set height based on variable and align to bottom left */
+  height: var(--desktop-footer-height);
+  display: flex;
+  align-items: center;
+}
+
+footer p {
+  /* Slighly smaller footer text */
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+  /* ---------- not needed for a4, will adjust based on future assignments ---------- */
+section {
+  background-color: var(--pastel-mid-accent);
+  width: 100%;
+  max-width: 1200px;
+  height: fit-content;
+  border: var(--1px-border);
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 0px 0px var(--pastel-dark);
+  margin-bottom: 50px;
+  position: relative;
+}
+
+header.section-header {
+  height: 20px;
+  width: 100%;
+  background-color: var(--pure-light);
+  color: var(--pastel-dark);
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: var(--1px-border);
+  border-radius: 5px 5px 0 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+article {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  margin-top: 2px;
+}
+    #topic1 {}
+    #topic2 {}
+
+div {}
+aside {}
+
+/* -------------------------------------------------------------- */
+
+/* ----- Anchors ----- Text links */
+a {  
+  font-family: 'Roboto', sans-serif;
+}
+a:link {
+  color: var(--unvisited-blue);
+}
+a:hover {
+}
+a:active {}
+a:visited {
+  color: var(--visited-pink);
+}
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+nav {
+  display: flex;
+}
+/* nav a {} */
+nav a:hover:not(.active) {
+  /* make color lighter */
+  filter: brightness(1.1);
+}
+
+/* Hide main nav, turns on when screen size > 769 */
+.main-nav {
+  display: none;
+}
+
+/* Keeps local links aligned and wraps down as needed */
+.local-nav {
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  position: relative;
+  border-bottom: var(--1px-border);
+}
+
+.local-nav a {
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+/* Creates illusion of indented border, old computer style*/
+.local-nav::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: -3px;
+  border-top: 2px solid var(--pure-light);
+}
+
+/* -----Mobile navigation ----- */
+nav#mobile-nav {
+  background-color: var(--pastel-mid);
+  border-top: var(--1px-border);
+  height: var(--mobile-nav-height);
+
+  /* Navbar always at bottom of screen */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  /* Align nav links to left */
+  display: flex;
+  justify-content:left;
+  align-items: center;
+}
+
+/* old-school indent line */
+#mobile-nav::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  border-top: 2px solid var(--pure-light);
+}
+
+/* For the mobile nav, I placed the anchor text inside of aspan and turned visibility to hidden.
+This allows me to use icons instead of text, but screen readers continue to see the text. */
+#mobile-nav a span {
+  visibility: hidden;
+}
+
+/* Temporary serves as a footer while in mobile mode */
+#mobile-nav p {
+  margin-left: auto;
+  margin-top: auto;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: var(--ink);
+}
+
+/* Extruding button effect */
+#mobile-nav a {
+  background-color: var(--pastel-mid);
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 2px solid var(--pastel-dark);
+  border-right: 2px solid var(--pastel-dark);
+  border-top: 2px solid var(--pure-light);
+  border-left: 2px solid var(--pure-light);
+}
+
+/* Pressed button effect */
+#mobile-nav .active {
+  border-bottom: 2px solid var(--pure-light);
+  border-right: 2px solid var(--pure-light);
+  border-top: 2px solid var(--pastel-dark);
+  border-left: 2px solid var(--pastel-dark);
+}
+
+/* ----- Mobile nav icons ----- */
+#home-link-mobile {
+  background-image: url("icons/home-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.active#home-link-mobile {
+  background-image: url("icons/home-icon.svg"), url("icons/dither.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#contact-link-mobile {
+  background-image: url("icons/contact-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.active#contact-link-mobile {
+  background-image: url("icons/contact-icon.svg"), url("icons/dither.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#gallery-link-mobile {
+  background-image: url("icons/gallery-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.active#gallery-link-mobile {
+  background-image: url("icons/gallery-icon.svg"), url("icons/dither.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*  -----  Typography  ----- */
+p {
+  margin: 0px 0px 20px 0px;
+}
+br {}
+ol, ul, dl {}
+li {}
+dt {}
+dd {}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+} 
+h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  color: var(--pastel-dark)
+}
+
+h2 {
+  font-size: 1.6em;
+}
+h3 {
+  margin-bottom: 5px;
+  position: relative;
+}
+
+h4 {}
+h5 {}
+h6 {}
+
+abbr {}
+acronym {}
+address {}
+blockquote {}
+  q {}
+  cite {}
+em {}
+hr {}
+mark {}
+s {}
+span {}
+strong {}
+sub {}
+sup {}
+time {}
+
+/*  ----- Coding or instructional typography ----- */
+pre {
+  /* create indented effect */
+  background-color: var(--pure-light);
+  background-image: url("icons/dither-32x32.png");
+  max-width: fit-content;
+  overflow-x: auto;
+  padding:10px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 3px solid var(--pure-light);
+  border-right: 3px solid var(--pure-light);
+  border-left: 3px solid var(--pastel-dark);
+  border-top: 3px solid var(--pastel-dark);
+}
+
+/* code {}
+kbd {}
+samp {}
+var {}
+del {} 
+ins {} */
+
+/*  ----- Table ----- */
+/* table {}
+caption {}
+thead {}
+tbody {}
+tfoot {}
+tr {}
+  tr:nth-child(even) {}
+th {}
+td {}
+  td:nth-child(1) {}
+colgroup {}
+data {}
+datalist {} */
+
+
+/*  ----- Form ----- */
+/* form {}
+fieldset {}
+  legend {}
+label {}
+  button {}
+  input {}
+  output {}
+  meter {}
+  progress {}
+  select {}
+    optgroup {}
+    option {}
+  textarea {} */
+
+/* ----- Media ----- */
+figure {
+  width: 100%;
+  min-width: 260px;
+  max-width: 650px;;
+  height: fit-content;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+  figcaption {}
+
+  figure img {
+    /* stylistic bevel for photos (requires photos to have a bit of tranparent space around them to be visible) 
+    I implemented it this way to avoid adding an extra div for every photo*/
+    width: 100%;
+    background-color: var(--pure-light);
+    background-image: url("icons/dither-32x32.png");
+    border-bottom: 2px solid var(--pure-light);
+    border-right: 2px solid var(--pure-light);
+    border-left: 2px solid var(--pastel-dark);
+    border-top: 2px solid var(--pastel-dark);
+  }
+
+svg {}
+picture {}
+  source {}
+iframe {}
+video {}
+audio {}
+embed {}
+object {}
+
+/*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+/* .gallery {}
+
+.floatright {}
+.floatleft {}
+.center-middle {}
+
+.ten {}
+.twenty {}
+.thirty {}
+.forty {}
+.fifty {}
+.sixty {}
+.seventy {}
+.eighty {}
+
+.radius {}
+.circle {}
+.boxshadow {}
+.tshadow {} 
+.gradient {}
+.shape {} */
+
+/* ------ Extra things I did, will adjust to fit later assignments ------ */
+.site-name-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#site-name-textbox {
+  min-width: 300px;
+  max-width: 500px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 10px;
+  background-color: var(--pure-light);
+  border: var(--1px-border);
+  border-radius: 5px;
+  box-shadow: 3px 3px 0px 0px var(--pastel-dark);
+}
+
+#site-name-textbox h1 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* Lock icon */
+#site-name-textbox img {
+  margin-right: 10px;
+}
+
+/* back, forward, refresh icons (aesthetic only) */
+#decorative-browser-btns {
+  margin-right: 15px;
+}
+
+/* Section close, minimize, maximize icons (aesthetic only) */
+#section-control-btns {
+  position: absolute;
+  left: 10px
+}
+
+/* Hide decorative icons on mobile */
+.decorative-icons {
+  display: none;
+}
+
+.decorative-icons:not(#decorative-browser-btns) {
+  height: 10px;
+}
+
+#browser-control-btns {
+  display: none;
+}
+
+#decorative-browser-btns {
+  height: 20px;
+}
+
+.socials {
+  display: none;
+}
+
+@keyframes App-logo {}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (min-width: 600px) {
+  .decorative-icons {
+    display: block;
+  }
+}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 769px) {
+  html {
+    padding-top: var(--desktop-top-gap);
+    padding-left: var(--desktop-side-gap);
+    padding-right: var(--desktop-side-gap);
+  }
+
+  body {
+    height: calc(100vh - var(--desktop-top-gap));
+  }
+
+  main {
+    height: calc(100vh - var(--desktop-header-height) - var(--desktop-footer-height) - var(--desktop-top-gap));
+    border-top: none;
+    border-bottom: var(--1px-border);
+    border-left: var(--1px-border);
+    border-right: var(--1px-border);
+    padding-top: 40px
+  }
+  
+  header.section-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .section-header h2 {
+    font-size: 0.8rem;
+  }
+
+  body header.main-header {
+    height: var(--desktop-header-height);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    position: relative;
+    border: var(--1px-border);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .main-nav {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    position: absolute;
+    top: -30px;
+    padding-left: 200px;
+  }
+
+  .main-nav a {
+    background-color: var(--pastel-mid-transparent);
+    height: 30px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--1px-border);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: var(--pastel-dark);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .main-nav .active {
+    border-bottom: none;
+    background-image: none;
+    background-color: var(--pure-light);
+  }
+
+  .socials {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .socials a {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+    background-size: 20px 20px;
+  }
+
+  .socials a:hover {
+    background-color: var(--pastel-mid-transparent);
+    border-radius: 50%;
+  }
+
+  .socials a span{
+    visibility: hidden;
+  }
+
+  #github-link {
+    background-image: url("icons/github-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #linkedin-link {
+    background-image: url("icons/linkedin-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #email-link {
+    background-image: url("icons/email-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #resume-link {
+    background-image: url("icons/resume-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  section {
+    max-width: 650px;
+  }
+
+  nav#mobile-nav {
+    display: none;
+  }
+
+  #browser-control-btns {
+    display: block;
+    position: absolute;
+    top: 10px;
+  }
+
+  #site-name-textbox {
+    height: 30px;
+  }
+
+  #site-name-textbox h1 {
+    font-size: 18px;
+  }
+
+  #site-name-textbox img {
+    height: 15px;
+  }
+
+}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {}
