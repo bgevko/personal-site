@@ -112,12 +112,14 @@ footer {
   height: var(--desktop-footer-height);
   display: flex;
   align-items: center;
+  position: relative
 }
 
 footer p {
   /* Slighly smaller footer text */
   margin: 0;
   font-size: 0.8rem;
+  display: none;
 }
 
   /* ---------- not needed for a4, will adjust based on future assignments ---------- */
@@ -694,7 +696,18 @@ object {}
     height: 15px;
   }
 
+  footer p {
+    display: block;
+  }
+
 }
 
+@media all and (min-width: 1024px) {
+
+footer p {
+  position: absolute;
+  bottom: 35px;
+  left: 10px;
+}
 /*   ===== PRINT  media query overrides previous styles =====  */
 @media print {}
