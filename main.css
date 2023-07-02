@@ -37,7 +37,6 @@
   --2px-border: 2px solid var(--pastel-dark);
   --mobile-header-height: 80px;
   --mobile-nav-height: 80px;
-  --mobile-bottom-offset: 44px;
   --desktop-header-height: 60px;
   --desktop-footer-height: 30px;
   --desktop-top-gap: 45px;
@@ -47,6 +46,15 @@
 /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
 * {
   box-sizing: border-box;
+}
+
+html {
+  body {
+    padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px) env(
+        safe-area-inset-bottom,
+        20px
+      ) env(safe-area-inset-left, 20px) !important;
+  }
 }
 
 body {
@@ -65,7 +73,7 @@ body {
   /* Custom styles */
   font-size: 12px;
   line-height: 1.5;
-  height: calc(100vh - var(--mobile-bottom-offset));
+  height: 100vh;
   position: relative;
 }
 

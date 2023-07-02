@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="noindex,noarchive, nofollow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="viewport-fit=cover" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -224,5 +225,17 @@
     <footer>
       <p>&copy; 2023 Bogdan Gevko</p>
     </footer>
+    <script>
+      // We listen to the resize event
+      window.addEventListener('resize', setVH);
+      // We define a function that should run on page load as well
+      function setVH() {
+          // We execute the same script as before
+          let vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+      // Run the function initially on page load.
+      setVH();
+  </script>
   </body>
 </html>
