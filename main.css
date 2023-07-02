@@ -37,6 +37,7 @@
   --2px-border: 2px solid var(--pastel-dark);
   --mobile-header-height: 80px;
   --mobile-nav-height: 80px;
+  --mobile-bottom-offset: 44px;
   --desktop-header-height: 60px;
   --desktop-footer-height: 30px;
   --desktop-top-gap: 45px;
@@ -50,6 +51,7 @@
 
 body {
   /* Assignment 4 reqs */
+  background-color: var(--pastel-mid);
   background-image: url("images/site-bg-1440x1024.png");
   background-size: cover;
   background-position: center;
@@ -63,7 +65,7 @@ body {
   /* Custom styles */
   font-size: 12px;
   line-height: 1.5;
-  height: 100vh;
+  height: calc(100vh - var(--mobile-bottom-offset));
   position: relative;
 }
 
@@ -85,7 +87,7 @@ main {
   align-items: center;
 
   /* 769px and below, main section will always be between header and bottom navbar */
-  height: calc(100vh - var(--mobile-nav-height) - var(--mobile-header-height) - var(--mobile-nav-height));
+  height: calc(100vh - var(--mobile-nav-height) - var(--mobile-header-height));
   
   /* Styling */
   background-color: var(--pastel-mid);
