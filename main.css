@@ -49,12 +49,7 @@
 }
 
 html {
-  body {
-    padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px) env(
-        safe-area-inset-bottom,
-        20px
-      ) env(safe-area-inset-left, 20px) !important;
-  }
+  height: -webkit-fill-available;
 }
 
 body {
@@ -65,6 +60,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
   max-width: 1300px;
   color: var(--ink);
@@ -74,6 +71,7 @@ body {
   font-size: 12px;
   line-height: 1.5;
   height: 100vh;
+  height: -webkit-fill-available;
   position: relative;
 }
 
