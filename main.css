@@ -85,7 +85,7 @@ main {
   align-items: center;
 
   /* 769px and below, main section will always be between header and bottom navbar */
-  height: calc(100vh - var(--mobile-nav-height) - var(--mobile-header-height));
+  height: calc(100vh - var(--mobile-nav-height) - var(--mobile-header-height) - var(--mobile-nav-height));
   
   /* Styling */
   background-color: var(--pastel-mid);
