@@ -48,10 +48,6 @@
   box-sizing: border-box;
 }
 
-html {
-  height: -webkit-fill-available;
-}
-
 body {
   /* Assignment 4 reqs */
   background-color: var(--pastel-mid);
@@ -68,10 +64,9 @@ body {
   font-family: 'Roboto Mono', monospace;
 
   /* Custom styles */
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
-  height: 100vh;
-  height: -webkit-fill-available;
+  height: 100dvh;
   position: relative;
 }
 
@@ -93,7 +88,7 @@ main {
   align-items: center;
 
   /* 769px and below, main section will always be between header and bottom navbar */
-  height: calc(100vh - var(--mobile-nav-height) - var(--mobile-header-height));
+  height: calc(100dvh - var(--mobile-nav-height) - var(--mobile-header-height));
   
   /* Styling */
   background-color: var(--pastel-mid);
@@ -561,11 +556,11 @@ object {}
   }
 
   body {
-    height: calc(100vh - var(--desktop-top-gap));
+    height: calc(100dvh - var(--desktop-top-gap));
   }
 
   main {
-    height: calc(100vh - var(--desktop-header-height) - var(--desktop-footer-height) - var(--desktop-top-gap));
+    height: calc(100dvh - var(--desktop-header-height) - var(--desktop-footer-height) - var(--desktop-top-gap));
     border-top: none;
     border-bottom: var(--1px-border);
     border-left: var(--1px-border);
@@ -614,7 +609,7 @@ object {}
     border-top-right-radius: 10px;
     color: var(--pastel-dark);
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 400;
   }
 
