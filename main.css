@@ -64,7 +64,7 @@ body {
   font-family: 'Roboto Mono', monospace;
 
   /* Custom styles */
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   height: 100dvh;
   position: relative;
@@ -574,7 +574,7 @@ object {}
   }
 
   .section-header h2 {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   body header.main-header {
