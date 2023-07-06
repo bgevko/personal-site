@@ -743,11 +743,46 @@ object {}
 
   section.gallery-section {
     max-width: 1200px;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
+  section.gallery-section .section-header {
+    height: 80px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border-radius: 0%;
+    border: none;
+  }
+
+  section.gallery-section .section-header h2 {
+    font-size: 2rem;
+    background-color: var(--pure-light);
+    width: 50%;
+    min-width: 550px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--ink);
+    box-shadow: 1px 1px 0px var(--ink);
+    color: var(--ink);
+  }
+
+  #section-control-btns {
+    display: none;
+  }
+
+  article.gallery {
+    background-color: transparent
   }
 
   figure {
     min-height: 500px;
-    background-color: var(--pastel-sky);
+    background-color: var(--pastel-mid-accent);
     border: 1px solid var(--ink);
     box-shadow: 1px 1px 0px var(--pastel-dark);
   }
@@ -794,46 +829,5 @@ footer:not(#gallery-footer) p {
   left: 10px;
 }
 
-@media all and (min-width: 1214px) {
-  section.gallery-section {
-    background-color: transparent;
-    box-shadow: none;
-    border: none;
-  }
-
-  section.gallery-section .section-header {
-    height: 80px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: transparent;
-    border-radius: 0%;
-    border: none;
-  }
-
-  section.gallery-section .section-header h2 {
-    font-size: 2rem;
-    background-color: var(--pure-light);
-    width: 50%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: var(--1px-border);
-    box-shadow: 1px 1px 0px var(--pastel-dark);
-  }
-
-  #section-control-btns {
-    display: none;
-  }
-
-  article.gallery {
-    background-color: transparent
-  }
-
-  figure {
-    background-color: var(--pastel-mid-accent);
-  }
-}
 /*   ===== PRINT  media query overrides previous styles =====  */
 @media print {}
