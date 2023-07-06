@@ -78,7 +78,12 @@ header {
   display: flex;
   justify-content: left;
   align-items: center;
-  padding: 0 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+header.banner-header {
+  padding: 0
 }
 
 main {
@@ -240,9 +245,8 @@ nav#mobile-nav {
   border-top: 2px solid var(--pure-light);
 }
 
-/* For the mobile nav, I placed the anchor text inside of aspan and turned visibility to hidden.
-This allows me to use icons instead of text, but screen readers continue to see the text. */
-#mobile-nav a span {
+/* Some links use icons instead of text. I used a span element to visually hide the text while keeping it available to screen readers*/
+a span, span span {
   visibility: hidden;
 }
 
@@ -475,7 +479,7 @@ object {}
 .shape {} */
 
 /* ------ Extra things I did, will adjust to fit later assignments ------ */
-.site-name-container {
+.banner-header {
   width: 100%;
   display: flex;
   align-items: center;
@@ -506,11 +510,6 @@ object {}
   margin-right: 10px;
 }
 
-/* back, forward, refresh icons (aesthetic only) */
-#decorative-browser-btns {
-  margin-right: 15px;
-}
-
 /* Section close, minimize, maximize icons (aesthetic only) */
 #section-control-btns {
   position: absolute;
@@ -520,21 +519,14 @@ object {}
 /* Hide decorative icons on mobile */
 .decorative-icons {
   display: none;
-}
-
-.decorative-icons:not(#decorative-browser-btns) {
   height: 10px;
 }
 
-#browser-control-btns {
+.browser-btn-nav {
   display: none;
 }
 
-#decorative-browser-btns {
-  height: 20px;
-}
-
-.socials {
+.socials-nav {
   display: none;
 }
 
@@ -544,6 +536,48 @@ object {}
 @media all and (min-width: 600px) {
   .decorative-icons {
     display: block;
+  }
+
+  .browser-btn-nav {
+    display: flex;
+    margin-right: 5px;
+  }
+
+  .browser-btn-nav a, .browser-btn-nav span {
+    height: 30px;
+    width: 30px;
+    font-size: xx-small;
+  }
+
+  .browser-btn-nav a:hover:not(.disabled) {
+    background-color: var(--pastel-mid-transparent);
+    border-radius: 50%;
+  }
+
+  .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  #prev-browser-icon {
+    background-image: url("icons/back-icon.svg");
+    background-size: 19px 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #next-browser-icon {
+    background-image: url("icons/fwd-icon.svg");
+    background-size: 19px 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #refresh-browser-icon {
+    background-image: url("icons/refresh-icon.svg");
+    background-size: 19px 19px;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
@@ -619,7 +653,7 @@ object {}
     background-color: var(--pure-light);
   }
 
-  .socials {
+  .socials-nav {
     width: 100%;
     height: 50px;
     display: flex;
@@ -627,20 +661,16 @@ object {}
     justify-content: flex-end;
   }
 
-  .socials a {
+  .socials-nav a {
     height: 30px;
     width: 30px;
     margin-right: 5px;
     background-size: 20px 20px;
   }
 
-  .socials a:hover {
+  .socials-nav a:hover {
     background-color: var(--pastel-mid-transparent);
     border-radius: 50%;
-  }
-
-  .socials a span{
-    visibility: hidden;
   }
 
   #github-link {
@@ -671,12 +701,6 @@ object {}
 
   nav#mobile-nav {
     display: none;
-  }
-
-  #browser-control-btns {
-    display: block;
-    position: absolute;
-    top: 10px;
   }
 
   #site-name-textbox {

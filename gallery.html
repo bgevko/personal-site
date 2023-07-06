@@ -15,23 +15,26 @@
   </head>
   <body>
     <header class="main-header">
-      <div class="site-name-container">
+      <header class="banner-header">
 
-          <!-- These are entirely aesthetic details (for now) so I will hide it from screen readers. -->
-        <img class="decorative-icons" id="decorative-browser-btns" src="icons/decorative-browser-btns.svg" alt="decorative browser icons" aria-hidden="true" tabindex="-1">
+        <nav class="browser-btn-nav">
+          <a href="contact.html" id="prev-browser-icon"><span>Previous Page</span></a>
+          <span aria-disabled="true" class="disabled" id="next-browser-icon"><span>Next Page (None)</span></span>
+          <a href="gallery.html" id="refresh-browser-icon"><span>Refresh Page</span></a>
+        </nav>
 
-        <div id="site-name-textbox">
+        <picture id="site-name-textbox">
           <img src="icons/lock-icon.svg" alt="Lock Icon">
           <h1>Bogdan Gevko</h1>
-        </div>
+        </picture>
 
-        <div class="socials">
-          <a id="github-link" href="#"><span>Bogdan's Github</span></a>
-          <a id="linkedin-link"href="#"><span>Bogdan's LinkedIn</span></a>
-          <a id="email-link"href="#"><span>Bogdan's Email</span></a>
-          <a id="resume-link"href="#"><span>Bogdan's Resume</span></a>
-        </div>
-      </div>
+        <nav class="socials-nav">
+          <a aria-label="Bogdan's GitHub" id="github-link" href="https://github.com/bgevko" target="_blank"><span>Bogdan's Github</span></a>
+          <a aria-label="Bogdan's LinkedIn" id="linkedin-link"href="https://www.linkedin.com/in/bogdan-gevko-3a0796113" target="_blank"><span>Bogdan's LinkedIn</span></a>
+          <a aria-label="Email Bogdan" id="email-link" href="mailto:bgevko@gmail.com" target="_blank"><span>Bogdan's Email</span></a>
+          <a aria-hidden="true" id="resume-link"href="" class="disabled"><span>Bogdan's Resume (temporarily disabled)</span></a>
+        </nav>
+      </header>
       
       <nav class="main-nav">
         <a id="home-link" href="index.html">home</a>
