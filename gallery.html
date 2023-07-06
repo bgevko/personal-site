@@ -43,7 +43,7 @@
       </nav>
     </header>
     <main>
-      <section>
+      <section class="gallery-section">
         <header class="section-header">
 
           <!-- ignored by screen readers for now (aesthetic detail) -->
@@ -53,6 +53,9 @@
         </header>
         <article class="gallery">
           <figure>
+            <header>
+              <h4>Biology Website</h4>
+            </header>
             <img src="images/bio-site.png" alt="biology website screenshot">
             <figcaption>
               I created this static <a href="https://bgevko.github.io/bi101-portfolio/index.html" target="_blank">website</a> to host an assignment for a biology class. I used Figma to make the initial design and implemented it using the Jekyll framework. I deployed it using GitHub pages. 
@@ -60,11 +63,17 @@
           </figure>
           
           <figure>
+            <header>
+              <h4>Biology Website - Mobile Layout</h4>
+            </header>
             <img src="images/bio-site-mobile-ui.webp" alt="biology website mobile layout">
             <figcaption>I ensured the website worked on mobile using reactive design. </figcaption>
           </figure>
 
           <figure>
+            <header>
+              <h4>Consistent Theme Design</h4>
+            </header>
             <img src="images/consistent-theme-design.webp" alt="theme design showcase">
             <figcaption>
               I designed a cohesive interface for my Anatomy notes in <a href="https://www.figma.com/file/EV9z4amL33OQaBFq9NIQT4/Anatomy-Notes?type=design&node-id=0%3A1&mode=design&t=sU72CFxJwhWZg5NN-1" target="_blank">Figma</a> to create a seamless scrolling <a href="https://storymaps.arcgis.com/stories/43515580f45c462a92aad93b54e36aee" target="_blank">experience.</a> The image on the left are all the pages I created and the subsequent images are random samples to showcase the design.
@@ -72,21 +81,33 @@
           </figure>
 
           <figure>
+            <header>
+              <h4>Metronome App</h4>
+            </header>
             <img src="images/metronome-app-ios-ui.png" alt="metronome app user interface design">
             <figcaption>I designed a user interface for an iOS metronome app in <a href="https://www.figma.com/file/k1f3U9YOhNN0PqzG1CoIFf/Untitled?type=design&node-id=0%3A1&mode=design&t=zM0v04OFBAbBT6dF-1" target="_blank">Figma</a> </figcaption>
           </figure>
 
           <figure>
+            <header>
+              <h4>Web Tool</h4>
+            </header>
             <img src="images/data-generator-desktop-ui.png" alt="screenshot of a data generation web app">
             <figcaption>I <a href="https://www.figma.com/file/z9YwwpkJ0A2H3oRWuMWyau/Light-mode?type=design&node-id=0%3A1&mode=design&t=AK9IXZBpaccbCSbq-1" target="_blank">designed</a> an <a href="https://github.com/bgevko/DataGen" target="_blank">open-source</a> random data generator web tool (<a href="https://www.randomdatagen.com" target="_blank">www.randomdatagen.com</a>) using React. The interface updates dynamically in real-time, and the tool is blazing fast because it doesn't need to make any external requests; all data logic is handled by frontend JavaScript. </figcaption>
           </figure>
 
           <figure>
+            <header>
+              <h4>Web Tool - Mobile Layout</h4>
+            </header>
             <img src="images/data-generator-mobile-ui.png" alt="Data generation tool mobile interface">
             <figcaption>I made the interface responsive and also implemented a dark mode. </figcaption>
           </figure>
 
           <figure>
+            <header>
+              <h4>Web Tool - Data Logic</h4>
+            </header>
             <img src="images/class-diagram.png" alt="class diagram of data generation logic">
             <figcaption>
               I used a variation of an Object Oriented Programming (OOP) design pattern known as <a href="https://www.tutorialspoint.com/design_pattern/factory_pattern.htm" target="_blank">Factory</a> when  implementing the data logic. I <a href="https://github.com/bgevko/DataGen/wiki/Entry-07:-Dec-15,-2022" target="_blank">documented</a> the implementation for future reference. 
@@ -94,6 +115,9 @@
           </figure>
 
           <figure>
+            <header>
+              <h4>QR Tracker</h4>
+            </header>
             <img src="images/qr-tracker.png" alt="Screenshot of a qr tracker">
             <figcaption>
               I created a minimal QR code tracker for a group project using Flask and deployed it to Heroku. The tracker would update when the group's QR codes were scanned, providing real-world data we presented in our final presentation.
@@ -101,11 +125,17 @@
           </figure>
 
           <figure>
+            <header>
+              <h4>Hobby - Vector Art</h4>
+            </header>
             <img src="images/vector-art-showcase.webp" alt="Four images of vector drawings">
             <figcaption>I created these vector drawings using Affinity Designer.</figcaption>
           </figure>
 
           <figure>
+            <header>
+              <h4>Hobby - Programming Project</h4>
+            </header>
             <img src="images/renoise-screenshot.webp" alt="Screenshot of renoise digital audio workstation">
             <figcaption>
               This is a screenshot of Renoise, a digital audio workstation. I'm currently creating a tool using the Lua scripting language and Renoise API to provide quality-of-life improvements for the program, such as expanded edit operations and more intuitive navigation. 
@@ -121,7 +151,7 @@
       <a class='active' id="gallery-link-mobile" href="#"><span>Gallery</span></a>
       <p>&copy; 2023 Bogdan Gevko</p>
     </nav>
-    <footer>
+    <footer id="gallery-footer">
       <p>&copy; 2023 Bogdan Gevko</p>
     </footer>
   </body>
