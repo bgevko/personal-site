@@ -576,11 +576,6 @@ object {}
     display: block;
   }
 
-  .browser-btn-nav {
-    display: flex;
-    margin-right: 5px;
-  }
-
   .browser-btn-nav a, .browser-btn-nav span {
     height: 30px;
     width: 30px;
@@ -735,6 +730,11 @@ object {}
     background-image: url("icons/resume-icon.svg");
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  .browser-btn-nav {
+    display: flex;
+    margin-right: 5px;
   }
 
   section {
